@@ -6,7 +6,7 @@ Public Class main
         'saving should only be available when a 1 COURSE, 1 STUDENT, & 1 INSTRUCTOR ARE LOADED
         SaveFileDialog1.ShowDialog()
         Dim location As String = SaveFileDialog1.FileName
-        enroll.SaveEnrollments(location)
+        enroll.SaveData(location)
 
         'getting main for ready for another enrollment
         btnSave.Enabled = False

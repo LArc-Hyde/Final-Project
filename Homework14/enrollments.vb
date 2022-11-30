@@ -65,8 +65,21 @@
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Public Sub AddEnroll(s As student, i As Instructor, c As course)
+        Dim e As New enrollments
+        e.Students.Add(s)
+        e.Instructors.Add(i)
+        e.Courses.Add(c)
+        m_enrollments.Add(e) 'once the user assigns an enrollment the class can save itself
+    End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'These 3 hold all selectable students, instructors and courses
     Private m_courses As New List(Of course)
     Private m_students As New List(Of student)
     Private m_instructors As New List(Of Instructor)
-    Private m_studentCount As Integer = 0 'will start at zero then increment everytimes a stuiident is added
+
+    Private m_enrollments As New List(Of enrollments) 'saves each individual enrollment
+
+    Private m_studentCount As Integer = 0 'will start at zero then increment everytimes a student is added
 End Class
