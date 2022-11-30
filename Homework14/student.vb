@@ -8,5 +8,5 @@
         save.Close()
         MessageBox.Show("Student " & FirstName & " " & LastName & " has been saved.")
     End Sub
-    'might have to have a counter to for a student to have multiple courses
+    Private m_count As Integer
 End Class
