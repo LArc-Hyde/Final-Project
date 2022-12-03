@@ -12,6 +12,7 @@
             inst.Email() = txtEmail.Text
             inst.OfficeNumber = txtOfficeNum.Text
             main.enroll.Instructors(inst) 'adding an Instructor to enroll
+            MessageBox.Show("Instructor " & inst.FirstName & " " & inst.LastName & " has been created.")
 
             'clearing textboxes
             txtFName.Clear()
