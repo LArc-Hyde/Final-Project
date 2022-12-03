@@ -27,6 +27,6 @@ Public Class addStudent
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Creator.Count() 'Updates if new Students are added
         Creator.Show() 'gets back to main form without saving any data
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class
