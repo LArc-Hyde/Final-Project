@@ -8,5 +8,4 @@
         save.Close()
         MessageBox.Show("Student " & FirstName & " " & LastName & " has been saved.")
     End Sub
-    Private m_count As Integer
 End Class

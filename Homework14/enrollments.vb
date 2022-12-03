@@ -1,15 +1,33 @@
 ﻿Public Class enrollments
     'will save as CSV using each indivdual class' save functions and iterate through list
-    Sub SaveEnrollments(location As String)
+    Sub SaveData(location As String)
         If m_studentCount > 0 And m_instructors.Count <> 0 And m_courses.Count <> 0 Then
             For iter As Integer = 0 To m_studentCount - 1
                 m_students(iter).CSV(location)
                 m_instructors(iter).CSV(location)
                 m_courses(iter).CSV(location)
             Next
+
         Else
             MessageBox.Show("Was not able to save because 1 or more lists were empty.")
         End If
+    End Sub
+    Sub CSV(location As String, iter As Integer)
+        Dim save As System.IO.StreamWriter
+        save = My.Computer.FileSystem.OpenTextFileWriter(location & "_enrollments.csv", True)
+        'Saves the student part of enrollment in 1 line
+        save.WriteLine(m_enrollments(iter).Students(0).FirstName & "," &
+            m_enrollments(iter).Students(0).LastName & "," &
+            m_enrollments(iter).Students(0).Email & "," &
+            m_enrollments(iter).Students(0).StudentNumber)
+        'saves the instructor part of enrollment 
+        save.WriteLine(m_enrollments(iter).Instructors(0).FirstName & "," &
+            m_enrollments(iter).Instructors(0).LastName & "," &
+            m_enrollments(iter).Instructors(0).Email & "," &
+            m_enrollments(iter).Instructors(0).OfficeNumber)
+        'saves course part
+        save.WriteLine(m_enrollments(iter).Courses(0))
+        save.Close()
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
