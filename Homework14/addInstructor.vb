@@ -1,5 +1,5 @@
 ﻿Public Class addInstructor
-    Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click
+    Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnCreateInstructor.Click
         'making sure everything is filled and valid
         If txtFName.Text = "" Or txtLName.Text = "" Or txtEmail.Text = "" Or txtOfficeNum.Text = "" Or
             IsNumeric(txtOfficeNum.Text) = False Then

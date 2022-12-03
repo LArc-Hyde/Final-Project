@@ -22,7 +22,7 @@ Partial Class addInstructor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnAddStudent = New System.Windows.Forms.Button()
+        Me.btnCreateInstructor = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,16 +31,17 @@ Partial Class addInstructor
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtLName = New System.Windows.Forms.TextBox()
         Me.txtFName = New System.Windows.Forms.TextBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnAddStudent
+        'btnCreateInstructor
         '
-        Me.btnAddStudent.Location = New System.Drawing.Point(24, 231)
-        Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(254, 34)
-        Me.btnAddStudent.TabIndex = 17
-        Me.btnAddStudent.Text = "Add To Enrollment"
-        Me.btnAddStudent.UseVisualStyleBackColor = True
+        Me.btnCreateInstructor.Location = New System.Drawing.Point(24, 231)
+        Me.btnCreateInstructor.Name = "btnCreateInstructor"
+        Me.btnCreateInstructor.Size = New System.Drawing.Size(113, 34)
+        Me.btnCreateInstructor.TabIndex = 17
+        Me.btnCreateInstructor.Text = "Create Instructor"
+        Me.btnCreateInstructor.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -106,12 +107,22 @@ Partial Class addInstructor
         Me.txtFName.Size = New System.Drawing.Size(100, 23)
         Me.txtFName.TabIndex = 9
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(178, 231)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(113, 34)
+        Me.btnBack.TabIndex = 18
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'addInstructor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(315, 291)
-        Me.Controls.Add(Me.btnAddStudent)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnCreateInstructor)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -127,7 +138,7 @@ Partial Class addInstructor
 
     End Sub
 
-    Friend WithEvents btnAddStudent As Button
+    Friend WithEvents btnCreateInstructor As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -136,4 +147,5 @@ Partial Class addInstructor
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtLName As TextBox
     Friend WithEvents txtFName As TextBox
+    Friend WithEvents btnBack As Button
 End Class
