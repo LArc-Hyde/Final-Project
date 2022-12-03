@@ -53,6 +53,18 @@
     Private Sub setStudentCount()
         m_studentCount += 1
     End Sub
+
+    Function InstructorCount()
+        Return m_instructors.Count()
+    End Function
+
+    Function CourseCount() As Integer
+        Return m_courses.Count()
+    End Function
+
+    Function EnrollmentCount() As Integer
+        Return m_enrollments.Count()
+    End Function
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'returns whole list of courses
