@@ -1,15 +1,25 @@
 ﻿Public Class enrollments
     'will save as CSV using each indivdual class' save functions and iterate through list
     Sub SaveData(location As String)
-        If m_studentCount > 0 And m_instructors.Count <> 0 And m_courses.Count <> 0 Then
-            For iter As Integer = 0 To m_studentCount - 1
-                m_students(iter).CSV(location)
-                m_instructors(iter).CSV(location)
-                m_courses(iter).CSV(location)
+        If m_studentCount > 0 Then
+            For iterST As Integer = 0 To m_students.Count - 1
+                m_students(iterST).CSV(location)
             Next
-
-        Else
-            MessageBox.Show("Was not able to save because 1 or more lists were empty.")
+        End If
+        If m_instructors.Count <> 0 Then
+            For iterIN As Integer = 0 To m_instructors.Count - 1
+                m_instructors(iterIN).CSV(location)
+            Next
+        End If
+        If m_courses.Count <> 0 Then
+            For iterCO As Integer = 0 To m_courses.Count - 1
+                m_courses(iterCO).CSV(location)
+            Next
+        End If
+        If m_enrollments.Count <> 0 Then
+            For iterEn As Integer = 0 To m_enrollments.Count - 1
+                CSV(location, iterEn)
+            Next
         End If
     End Sub
     Sub CSV(location As String, iter As Integer)
