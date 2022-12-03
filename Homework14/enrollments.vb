@@ -1,4 +1,6 @@
-﻿Public Class enrollments
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class enrollments
     'will save as CSV using each indivdual class' save functions and iterate through list
     Sub SaveData(location As String)
         If m_studentCount > 0 Then
@@ -77,7 +79,23 @@
     End Function
     'sets a course at the end of list
     Sub Courses(cour As course)
-        m_courses.Add(cour)
+        If m_courses.Count = 0 Then
+            m_courses.Add(cour)
+            MessageBox.Show("Course " & cour.CourseName & " " & cour.CourseNumber & " has been saved.")
+        Else
+            Dim duplicate As Boolean = False 'checks whether duplicate is found
+            For iter = 0 To m_courses.Count - 1
+                If cour.CourseNumber = m_courses(iter).CourseNumber Then
+                    duplicate = True
+                End If
+            Next
+            If duplicate = False Then
+                m_courses.Add(cour)
+                MessageBox.Show("Course " & cour.CourseName & " " & cour.CourseNumber & " has been saved.")
+            Else
+                MessageBox.Show("Course: " & cour.CourseNumber & " has already been added.")
+            End If
+        End If
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,7 +109,7 @@
     End Function
     'sets student at end of list
     Sub Students(stu As student)
-        If m_studentCount <> 0 Then 'if list empty add student
+        If m_studentCount = 0 Then 'if list empty add student
             m_students.Add(stu)
             setStudentCount() 'increments m_studentCount
             MessageBox.Show("Student " & stu.FirstName & " " & stu.LastName & " " & stu.StudentNumber & " has been added")
