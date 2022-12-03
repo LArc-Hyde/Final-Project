@@ -31,7 +31,7 @@
                        m_enrollments(iter).Courses(0).Units & "," &
                        m_enrollments(iter).Courses(0).RoomNumber & "," &
                        m_enrollments(iter).Courses(0).Professor() & "," &
-                       m_enrollments(iter).Courses(0).SeatsOpened())
+                       m_enrollments(iter).Courses(0).SeatsOpen())
         save.Close()
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
