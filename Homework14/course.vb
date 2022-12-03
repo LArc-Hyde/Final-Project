@@ -35,6 +35,10 @@
         m_Professor = fname & " " & lname
     End Sub
 
+    Sub Professor(name As String) 'sets Professor name
+        m_Professor = name
+    End Sub
+
     Function FirstProf() As String 'returns Professor First Name
         Dim name() As String = Split(m_Professor)
         Return name(0)
