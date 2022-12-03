@@ -11,17 +11,18 @@
         save.Close()
         MessageBox.Show("Course: " & CourseName & ": " & CourseNumber & " has been saved.")
     End Sub
+
     Function SeatsOpen() As Integer 'returns seats avaialble
         Return m_SeatsOpened
     End Function
 
-    Function FillSeat() As Integer 'fills a seat for a new student
+    Sub FillSeat() 'fills a seat for a new student
         If m_SeatsOpened > 0 Then
             m_SeatsOpened -= 1
         Else
             MessageBox.Show("Cannot add more students. Max Course size has been reached.")
         End If
-    End Function
+    End Sub
 
     Function Professor() As String 'Returns Professor  Full Name
         If m_Professor = "" Then
