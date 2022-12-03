@@ -12,7 +12,7 @@ Public Class addStudent
             stu.FirstName() = txtFName.Text
             stu.LastName() = txtLName.Text
             stu.Email() = txtEmail.Text
-            stu.StudentNumber = txtStudentNum.Text
+            stu.StudentNumber = txtStudentNum.Text 'must be unique
             main.enroll.Students(stu) 'adding a student to enroll
 
             'clearing out textboxes to get ready for next student
