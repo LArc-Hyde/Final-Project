@@ -23,7 +23,7 @@
             cour.RoomNumber() = txtRoomNum.Text
             cour.CourseName() = txtCourseName.Text
             cour.Units() = txtUnits.Text
-            cour.Professor() = ComboBox1.SelectedText
+            cour.Professor(ComboBox1.SelectedText)
             main.enroll.Courses(cour) 'adding a course to enroll
             MessageBox.Show("Course " & cour.CourseName & " " & cour.CourseNumber & " has been saved.")
         End If
