@@ -31,6 +31,9 @@ Partial Class addCourse
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'txtCourseName
@@ -99,18 +102,47 @@ Partial Class addCourse
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(47, 217)
+        Me.Button1.Location = New System.Drawing.Point(141, 219)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(194, 31)
+        Me.Button1.Size = New System.Drawing.Size(100, 31)
         Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Add to Enrollment"
+        Me.Button1.Text = "Create Course"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(290, 219)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 31)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Back"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(290, 55)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 15)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Select Professor:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(279, 73)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox1.TabIndex = 11
         '
         'addCourse
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(272, 275)
+        Me.ClientSize = New System.Drawing.Size(437, 275)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -136,4 +168,7 @@ Partial Class addCourse
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
