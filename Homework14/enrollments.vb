@@ -26,7 +26,12 @@
             m_enrollments(iter).Instructors(0).Email & "," &
             m_enrollments(iter).Instructors(0).OfficeNumber)
         'saves course part
-        save.WriteLine(m_enrollments(iter).Courses(0))
+        save.WriteLine(m_enrollments(iter).Courses(0).CourseNumber & "," &
+                       m_enrollments(iter).Courses(0).CourseName & "," &
+                       m_enrollments(iter).Courses(0).Units & "," &
+                       m_enrollments(iter).Courses(0).RoomNumber & "," &
+                       m_enrollments(iter).Courses(0).Professor() & "," &
+                       m_enrollments(iter).Courses(0).SeatsOpened())
         save.Close()
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
