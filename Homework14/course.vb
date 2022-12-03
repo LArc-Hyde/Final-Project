@@ -6,7 +6,8 @@
     Public Sub CSV(location As String)
         Dim save As System.IO.StreamWriter
         save = My.Computer.FileSystem.OpenTextFileWriter(location & "_course.csv", True)
-        save.WriteLine(CourseNumber & "," & CourseName & "," & Units & "," & RoomNumber)
+        save.WriteLine(CourseNumber & "," & CourseName & "," & Units & "," & RoomNumber & "," &
+                       Professor() & "," & SeatsOpen())
         save.Close()
         MessageBox.Show("Course: " & CourseName & ": " & CourseNumber & " has been saved.")
     End Sub
