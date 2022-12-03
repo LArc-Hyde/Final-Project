@@ -91,8 +91,25 @@
     End Function
     'sets student at end of list
     Sub Students(stu As student)
-        m_students.Add(stu)
-        setStudentCount() 'increments m_studentCount
+        If m_studentCount <> 0 Then 'if list empty add student
+            m_students.Add(stu)
+            setStudentCount() 'increments m_studentCount
+            MessageBox.Show("Student " & stu.FirstName & " " & stu.LastName & " " & stu.StudentNumber & " has been added")
+        Else 'If Student list is not empty will search list for duplicate student num. (STUDENT NUMBER MUST BE UNIQUE)
+            Dim duplicate As Boolean = False
+            For iter = 0 To m_students.Count - 1
+                If m_students(iter).StudentNumber = stu.StudentNumber Then 'if duplicate is found then will not add
+                    duplicate = True 'duplicate found and marked
+                End If
+            Next
+            If duplicate = False Then
+                m_students.Add(stu)
+                setStudentCount() 'increments m_studentCount
+                MessageBox.Show("Student " & stu.FirstName & " " & stu.LastName & " " & stu.StudentNumber & " has been added")
+            Else
+                MessageBox.Show("Student: " & stu.StudentNumber & " has already been added.") 'will not be added
+            End If
+        End If
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------

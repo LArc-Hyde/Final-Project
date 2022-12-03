@@ -45,7 +45,7 @@ Public Class Creator
         'addEnroll.Show() 'opens adddEnrollment form
     End Sub
 
-    Private Sub Count() 'Displays amount of  students, instructors, enrollments
+    Public Sub Count() 'Displays amount of  students, instructors, enrollments
         lstEnrollView.Items.Clear()
         lstEnrollView.Items.Add("Total Students: " & main.enroll.getStudentCount())
         lstEnrollView.Items.Add("Total Instructors: " & main.enroll.InstructorCount())

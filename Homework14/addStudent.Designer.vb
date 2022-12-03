@@ -30,7 +30,8 @@ Partial Class addStudent
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnAddStudent = New System.Windows.Forms.Button()
+        Me.btnCreateStudent = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtFName
@@ -97,21 +98,31 @@ Partial Class addStudent
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Student Number:"
         '
-        'btnAddStudent
+        'btnCreateStudent
         '
-        Me.btnAddStudent.Location = New System.Drawing.Point(12, 215)
-        Me.btnAddStudent.Name = "btnAddStudent"
-        Me.btnAddStudent.Size = New System.Drawing.Size(254, 34)
-        Me.btnAddStudent.TabIndex = 8
-        Me.btnAddStudent.Text = "Add To Enrollment"
-        Me.btnAddStudent.UseVisualStyleBackColor = True
+        Me.btnCreateStudent.Location = New System.Drawing.Point(12, 215)
+        Me.btnCreateStudent.Name = "btnCreateStudent"
+        Me.btnCreateStudent.Size = New System.Drawing.Size(125, 34)
+        Me.btnCreateStudent.TabIndex = 8
+        Me.btnCreateStudent.Text = "Create Student"
+        Me.btnCreateStudent.UseVisualStyleBackColor = True
+        '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(160, 215)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(125, 34)
+        Me.btnBack.TabIndex = 9
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'addStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(297, 271)
-        Me.Controls.Add(Me.btnAddStudent)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnCreateStudent)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -135,5 +146,6 @@ Partial Class addStudent
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnAddStudent As Button
+    Friend WithEvents btnCreateStudent As Button
+    Friend WithEvents btnBack As Button
 End Class
