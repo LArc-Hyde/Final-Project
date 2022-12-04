@@ -49,6 +49,6 @@
         Return name(1)
     End Function
 
-    Private m_Professor As String = ""
+    Private m_Professor As String
     Private m_SeatsOpened As Integer = 20
 End Class

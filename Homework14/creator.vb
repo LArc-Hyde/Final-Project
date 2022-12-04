@@ -8,12 +8,7 @@ Public Class Creator
         SaveFileDialog1.ShowDialog()
         Dim location As String = SaveFileDialog1.FileName
         main.enroll.SaveData(location)
-
-        'getting main for ready for another enrollment
-        btnSave.Enabled = False
-        btnAddIStudent.Enabled = True 'can now add student
-        lstEnrollView.Items.RemoveAt(lstEnrollView.Items.Count - 1) 'removing last instruction
-        lstEnrollView.Items.Add("Enrollment saved-----------------------------------------------------------------------------")
+        MessageBox.Show("Data has been saved")
     End Sub
 
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click

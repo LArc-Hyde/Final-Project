@@ -14,8 +14,8 @@
         'making sure everything is filled and valid
         If txtCourseName.Text = "" Or txtCourseNum.Text = "" Or IsNumeric(txtCourseNum.Text) = False Or
                 txtRoomNum.Text = "" Or IsNumeric(txtRoomNum.Text) = False Or txtUnits.Text = "" Or
-                IsNumeric(txtUnits.Text) = False Then
-            MessageBox.Show("All Fields must be filled and of the correct type.")
+                IsNumeric(txtUnits.Text) = False Or ComboBox1.SelectedIndex = -1 Then
+            MessageBox.Show("All Fields must be filled and of the correct type. Do not Forget to chose Professor.")
         Else
             'assigning a course
             Dim cour As New course
@@ -23,7 +23,7 @@
             cour.RoomNumber() = txtRoomNum.Text
             cour.CourseName() = txtCourseName.Text
             cour.Units() = txtUnits.Text
-            cour.Professor(ComboBox1.SelectedText)
+            cour.Professor(ComboBox1.SelectedItem.ToString)
             main.enroll.Courses(cour) 'adding a course to enroll
         End If
     End Sub
