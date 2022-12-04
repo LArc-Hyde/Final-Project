@@ -51,7 +51,7 @@
         End If
     End Sub
 
-    'checks Course Number of currently selectec Course and retrieves and sets the avaible seats
+    'checks Course Number of currently selected Course and retrieves and sets the avaible seats
     Private Sub Seats()
         Dim courseNum() As String = Split(ComboBox1.SelectedText)
         Dim seatNum As Integer
@@ -63,12 +63,48 @@
         txtSeats.Text = CStr(seatNum)
     End Sub
 
+    'moves text from left to right.  Create Enrollments actually applies changes
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
+        Dim data As String = lstNotEnrolled.Text
+        lstEnrolled.Items.Add(data)
     End Sub
 
+    'goes back to creator without saving
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Creator.Show()
         Me.Close()
+    End Sub
+
+    'adds enrollments to our enrollment instance
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        Dim StudentIndex As Integer, InstructorIndex As Integer, CourseIndex As Integer
+
+        If lstEnrolled.Items.Count <> 0 Then
+            For iterList As Integer = 0 To lstEnrolled.Items.Count - 1
+                Dim StudentNum() As String = Split(lstEnrolled.Items.Item(iterList)) 'studentnum(2) contains the student number
+                For iterStudent As Integer = 0 To main.enroll.getStudentCount - 1
+                    If CInt(StudentNum(2)) = main.enroll.Students(iterStudent).StudentNumber Then
+                        StudentIndex = iterStudent 'location of matching student
+                    End If
+                Next
+                For iterCourse As Integer = 0 To main.enroll.CourseCount - 1
+                    Dim CourseNum() As String = Split(ComboBox1.SelectedText) 'CourseNum(1) holds course num
+                    If CInt(CourseNum(1)) = main.enroll.Courses(iterCourse).CourseNumber Then
+                        CourseIndex = iterCourse 'location of matching course
+                    End If
+                Next
+                For iterInstructor As Integer = 0 To main.enroll.InstructorCount - 1
+                    Dim names() As String = Split(main.enroll.Courses(CourseIndex).Professor) 'name(0) firstname | name(1) lastname
+                    If names(0) = main.enroll.Instructors(iterInstructor).FirstName &
+                    names(1) = main.enroll.Instructors(iterInstructor).LastName Then
+                        InstructorIndex = iterInstructor 'location of matching instructor
+                    End If
+                Next
+                'saving enrollment
+                main.enroll.AddEnroll(main.enroll.Students(StudentIndex), main.enroll.Instructors(InstructorIndex), main.enroll.Courses(CourseIndex))
+            Next
+        Else
+            MessageBox.Show("The Students Enrolled Box must have at least one student to create an enrollment.")
+        End If
     End Sub
 End Class
