@@ -151,6 +151,7 @@ Public Class enrollments
         e.Instructors.Add(i)
         e.Courses.Add(c)
         m_enrollments.Add(e) 'once the user assigns an enrollment the class can save itself
+        MessageBox.Show("Enrollment has been added.")
     End Sub
     'returns enrollment at specified index
     Function GetEnroll(index As Integer) As enrollments

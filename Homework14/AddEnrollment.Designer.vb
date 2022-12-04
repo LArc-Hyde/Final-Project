@@ -33,6 +33,7 @@ Partial Class AddEnrollment
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.txtSeats = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -132,11 +133,21 @@ Partial Class AddEnrollment
         Me.txtSeats.Size = New System.Drawing.Size(32, 23)
         Me.txtSeats.TabIndex = 11
         '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(283, 31)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(104, 23)
+        Me.btnSearch.TabIndex = 12
+        Me.btnSearch.Text = "Search Course"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
         'AddEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(735, 368)
+        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtSeats)
         Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.btnBack)
@@ -166,4 +177,5 @@ Partial Class AddEnrollment
     Friend WithEvents btnBack As Button
     Friend WithEvents btnCreate As Button
     Friend WithEvents txtSeats As TextBox
+    Friend WithEvents btnSearch As Button
 End Class

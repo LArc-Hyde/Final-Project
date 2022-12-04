@@ -28,4 +28,8 @@
         Creator.Show() 'gets back to main form without saving any data
         Me.Close()
     End Sub
+
+    Private Sub addInstructor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

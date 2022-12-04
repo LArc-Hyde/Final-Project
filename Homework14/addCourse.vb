@@ -25,6 +25,13 @@
             cour.Units() = txtUnits.Text
             cour.Professor(ComboBox1.SelectedItem.ToString)
             main.enroll.Courses(cour) 'adding a course to enroll
+
+            'clearing course for next choice
+            ComboBox1.SelectedIndex = -1
+            txtCourseNum.Clear()
+            txtRoomNum.Clear()
+            txtUnits.Clear()
+            txtCourseName.Clear()
         End If
     End Sub
 
