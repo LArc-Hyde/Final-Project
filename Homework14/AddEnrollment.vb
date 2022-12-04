@@ -51,6 +51,7 @@
         End If
     End Sub
 
+    'checks Course Number of currently selectec Course and retrieves and sets the avaible seats
     Private Sub Seats()
         Dim courseNum() As String = Split(ComboBox1.SelectedText)
         Dim seatNum As Integer

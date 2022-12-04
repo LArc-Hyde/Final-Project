@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddEnrollment
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddEnrollment
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -33,7 +33,6 @@ Partial Class AddEnrollment
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.txtSeats = New System.Windows.Forms.TextBox()
-        Me.btnRemove = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -100,7 +99,7 @@ Partial Class AddEnrollment
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(299, 116)
+        Me.btnAdd.Location = New System.Drawing.Point(298, 155)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(129, 50)
         Me.btnAdd.TabIndex = 8
@@ -133,21 +132,11 @@ Partial Class AddEnrollment
         Me.txtSeats.Size = New System.Drawing.Size(32, 23)
         Me.txtSeats.TabIndex = 11
         '
-        'btnRemove
-        '
-        Me.btnRemove.Location = New System.Drawing.Point(299, 209)
-        Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(129, 50)
-        Me.btnRemove.TabIndex = 12
-        Me.btnRemove.Text = "Remove From Course" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<---"
-        Me.btnRemove.UseVisualStyleBackColor = True
-        '
         'AddEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(735, 368)
-        Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.txtSeats)
         Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.btnBack)
@@ -177,5 +166,4 @@ Partial Class AddEnrollment
     Friend WithEvents btnBack As Button
     Friend WithEvents btnCreate As Button
     Friend WithEvents txtSeats As TextBox
-    Friend WithEvents btnRemove As Button
 End Class
