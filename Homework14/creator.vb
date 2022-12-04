@@ -42,7 +42,7 @@ Public Class Creator
     End Sub
     Private Sub btnAddEnroll_Click(sender As Object, e As EventArgs) Handles btnAddEnroll.Click
         Me.Hide()
-        'addEnroll.Show() 'opens adddEnrollment form
+        AddEnrollment.Show() 'opens adddEnrollment form
     End Sub
 
     Public Sub Count() 'Displays amount of  students, instructors, enrollments

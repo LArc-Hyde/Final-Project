@@ -152,6 +152,10 @@ Public Class enrollments
         e.Courses.Add(c)
         m_enrollments.Add(e) 'once the user assigns an enrollment the class can save itself
     End Sub
+    'returns enrollment at specified index
+    Function GetEnroll(index As Integer) As enrollments
+        Return m_enrollments(index)
+    End Function
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'These 3 hold all selectable students, instructors and courses
