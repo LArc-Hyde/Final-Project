@@ -95,7 +95,6 @@
 
         If main.enroll.EnrollmentCount > 0 Or lstEnrolled.Items.Count > 0 Then 'if it is not empty then will make search for students enrolled
             For iter As Integer = 0 To main.enroll.EnrollmentCount - 1
-                MessageBox.Show(courseNum(1))
                 If CInt(courseNum(1)) = main.enroll.GetEnroll(iter).Courses(0).CourseNumber Then 'adds Full name and Student Number to enrolled list box
                     lstEnrolled.Items.Add(main.enroll.GetEnroll(iter).Students(0).FirstName & " " &
                         main.enroll.GetEnroll(iter).Students(0).LastName & " " &
@@ -107,7 +106,6 @@
 
         Dim isHit As Boolean 'if false will add Student to listbox of nonenrolled students; if true then will not get added
         For i As Integer = 0 To hits.Count - 1
-            MessageBox.Show(hits(i))
         Next
 
         If hits.Count > 0 Then
