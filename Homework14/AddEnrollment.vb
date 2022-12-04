@@ -100,7 +100,9 @@
                         InstructorIndex = iterInstructor 'location of matching instructor
                     End If
                 Next
-                'saving enrollment
+                'saving enrollment and reducing available seats
+                main.enroll.Courses(CourseIndex).FillSeat()
+                txtSeats.Text = main.enroll.Courses(CourseIndex).SeatsOpen()
                 main.enroll.AddEnroll(main.enroll.Students(StudentIndex), main.enroll.Instructors(InstructorIndex), main.enroll.Courses(CourseIndex))
             Next
         Else
