@@ -156,6 +156,10 @@ Public Class enrollments
     Function GetEnroll(index As Integer) As enrollments
         Return m_enrollments(index)
     End Function
+    'returns whole list of enrollments
+    Function AllEnrollments() As List(Of enrollments)
+        Return m_enrollments
+    End Function
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'These 3 hold all selectable students, instructors and courses
