@@ -19,6 +19,7 @@ Public Class Creator
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
         'ADD LOADING LATER
         'should update counts
+        MessageBox.Show("Will add Loading in future release")
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
