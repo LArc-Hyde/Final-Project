@@ -69,7 +69,7 @@
                 'saving enrollment and reducing available seats if it has not already been added as an enrollment
                 Dim isHit As Boolean = False 'if a student# And course# both are found in an existing enrollment then will be marked true
                 For iterEnr As Integer = 0 To main.enroll.EnrollmentCount - 1
-                    If main.enroll.Courses(CourseIndex).CourseNumber = main.enroll.GetEnroll(iterEnr).Courses(0).CourseNumber &
+                    If main.enroll.Courses(CourseIndex).CourseNumber = main.enroll.GetEnroll(iterEnr).Courses(0).CourseNumber And
                             main.enroll.Students(StudentIndex).StudentNumber = main.enroll.GetEnroll(iterEnr).Students(0).StudentNumber Then
                         isHit = True 'if marked true will not re-add as an enrollment
                     End If
