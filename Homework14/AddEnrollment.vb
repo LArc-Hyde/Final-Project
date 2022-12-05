@@ -66,11 +66,20 @@
                         InstructorIndex = iterInstructor 'location of matching instructor
                     End If
                 Next
-                'saving enrollment and reducing available seats
-                main.enroll.Courses(CourseIndex).FillSeat()
-                txtSeats.Text = main.enroll.Courses(CourseIndex).SeatsOpen()
-                main.enroll.AddEnroll(main.enroll.Students(StudentIndex), main.enroll.Instructors(InstructorIndex), main.enroll.Courses(CourseIndex))
-                Creator.Count()
+                'saving enrollment and reducing available seats if it has not already been added as an enrollment
+                Dim isHit As Boolean = False 'if a student# And course# both are found in an existing enrollment then will be marked true
+                For iterEnr As Integer = 0 To main.enroll.EnrollmentCount - 1
+                    If main.enroll.Courses(CourseIndex).CourseNumber = main.enroll.GetEnroll(iterEnr).Courses(0).CourseNumber &
+                            main.enroll.Students(StudentIndex).StudentNumber = main.enroll.GetEnroll(iterEnr).Students(0).StudentNumber Then
+                        isHit = True 'if marked true will not re-add as an enrollment
+                    End If
+                Next
+                If isHit = False Then 'if marked false will add
+                    main.enroll.Courses(CourseIndex).FillSeat()
+                    txtSeats.Text = main.enroll.Courses(CourseIndex).SeatsOpen()
+                    main.enroll.AddEnroll(main.enroll.Students(StudentIndex), main.enroll.Instructors(InstructorIndex), main.enroll.Courses(CourseIndex))
+                    Creator.Count()
+                End If
             Next
         Else
             MessageBox.Show("The Students Enrolled Box must have at least one student to create an enrollment.")
