@@ -5,12 +5,12 @@ Public Class main
     Public enroll As New enrollments
 
     'testing
-    Public st1 As New student
-    Public st2 As New student
-    Public in1 As New Instructor
-    Public in2 As New Instructor
-    Public co1 As New course
-    Public co2 As New course
+    'Public st1 As New student
+    'Public st2 As New student
+    'Public in1 As New Instructor
+    'Public in2 As New Instructor
+    'Public co1 As New course
+    'Public co2 As New course
 
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
